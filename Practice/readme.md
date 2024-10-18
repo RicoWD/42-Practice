@@ -43,7 +43,7 @@ git add *.c
 ```
 
 ```bash
-git commit -m  ‘mon exo que j’aime
+git commit -m  'mon exo que j’aime'
 ```
 
 ```bash 
@@ -92,20 +92,33 @@ Pour compiler : 
 ```bash 
 cc -Wall -Wextra -Werror *.c
 ```
+
 ```bash
 cc -Wall -Wextra -Werror *.c -o nom-du-fichie
 ```
 
-Sur Ubuntu pour lancer la norminette directement via le fichier .c sur VIM en appuyant sur F2 : 
+Sur Ubuntu pour lancer la Norminette directement via le fichier .c sur VIM en appuyant sur `F2`. Il faut créer le chemin d’accès et le fichier norminette.vim
 ```bash
-~/.vim/after/plugin/norminette.vim
+mkdir -p ~/.vim/after/plugin/
+cd $_
+touch norminette.vim
+open norminette.vim
 ```
 
+`mkdir -p` créer une imbrication de dossiers
+`$_`est une copie de l'argument précédent
+`cd $_` se déplace vers le dossier (imbriqué) crée précédemment
+
+Il faudra ensuite copier ces lignes ! 
 
 LINUX
-```bashnnoremap <F2> :update<CR>:execute 'silent !bash -c ''setsid x-terminal-emulator -e bash -c "watch -n 1 norminette -R CheckForbiddenSourceHeader ' . shellescape(expand('%')) . '" >/dev/null 2>&1 < /dev/null &'''<CR>:redraw!<CR>```
+```vim
+noremap <F2> :update<CR>:execute 'silent !bash -c ''setsid x-terminal-emulator -e bash -c "watch -n 1 norminette -R CheckForbiddenSourceHeader ' . shellescape(expand('%')) . '" >/dev/null 2>&1 < /dev/null &'''<CR>:redraw!<CR>
+```
 
 MAC
-```nnoremap <F2> :update<CR>:execute 'silent !osascript -e ''tell application "Terminal" to do script "cd ' . shellescape(getcwd()) . ' && watch -n 1 norminette -R CheckForbiddenSourceHeader ' . shellescape(expand('%')) . '"'' &'<CR>:redraw!<CR>```
+```vim
+nnoremap <F2> :update<CR>:execute 'silent !osascript -e ''tell application "Terminal" to do script "cd ' . shellescape(getcwd()) . ' && watch -n 1 norminette -R CheckForbiddenSourceHeader ' . shellescape(expand('%')) . '"'' &'<CR>:redraw!<CR>
+```
 
 Voxotron : Permet de voter pour 10 piscineux (3 semaines)
