@@ -8,7 +8,7 @@ SOLUTION COMPLÈTE
 ```
 
 
-VÉRIFICATION (ne doit pas apparaitre)
+VÉRIFICATION (ne doit pas apparaître)
 ```c
  int     main(void)
  {

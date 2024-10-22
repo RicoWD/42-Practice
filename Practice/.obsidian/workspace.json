@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Exercices/c00/readme.md",
+                "file": "Exercices/c01/ex02/readme.md",
                 "mode": "source",
                 "source": false
               },
@@ -164,14 +164,23 @@
   },
   "active": "618bd808a9877d5f",
   "lastOpenFiles": [
-    "Exercices/c00/ex00/ft_putchar.c~",
-    "Exercices/c00/ex00/erreurs.log",
-    "readme.md",
+    "Exercices/c01/ex04/ft_ultimate_div_mod.c~",
+    "Exercices/c01/ex04/ft_swap2.c",
+    "Exercices/c01/ex04/a.out",
+    "Exercices/c01/ex04/ft_ultimate_div_mod.c",
+    "Exercices/ex04/ft_ultimate_div_mod.c",
+    "Exercices/ex04",
+    "Exercices/c01/cd",
+    "Exercices/c01/ex04",
+    "Exercices/c01/ex03/ft_div_mod.c~",
+    "Exercices/c01/ex03/a.out",
+    "Exercices/c01/ex03/ft_div_mod.c",
+    "Exercices/c01/readme.md",
+    "Exercices/c01/ex02/readme.md",
     "Exercices/c00/readme.md",
-    "Exercices/c00/ex00/a.out",
-    "Exercices/c00/ex00/ft_putchar.c",
-    "Exercices/c00/ex00/test.c~",
-    "Exercices/c00/ex00/test.c",
-    "Exercices/c00/ex00"
+    "Exercices/c01/ex07/readme.md",
+    "Exercices/c01/ex06/readme.md",
+    "Exercices/sh00/ex00/readme.md",
+    "readme.md"
   ]
 }
