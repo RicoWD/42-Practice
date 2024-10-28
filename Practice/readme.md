@@ -75,11 +75,24 @@ Ajouter le leader 42 dans un fichier .c ou .h : `fn+F1`
 Ou `:Stdheader`
 
   `
-`**~** cat .vimrc`
+`touch ~/.vimrc`
+Pour avoir la bonne indentation et passer la Norminette sur l'exo.
 Dans Home, si .vimrc n’existe pas , le créer et y ajouter les ligne suivantes
-set tabstop=4       " Définir la largeur d'une tabulation à 4 colonnes
-set shiftwidth=4    " Définir la largeur de l'indentation automatique à 4
-set noexpandtab     " Ne pas convertir les tabulations en espaces
+```Vim
+set tabstop=4       
+set shiftwidth=4    
+set noexpandtab     
+set autoindent      
+set number
+set cindent
+```
+
+Explication dans l'ordre : 
+largeur d'une tabulation à 4 colonnes
+largeur de l'indentation automatique à 4
+ne pas convertir les tabulations en espaces
+crée une indentation à chaque ligne concernée"
+ajoute les numéro de ligne"
 
 Approximations niveau C examen : 
 - Semaine 1 : C03

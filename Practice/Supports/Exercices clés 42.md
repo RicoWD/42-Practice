@@ -23,6 +23,7 @@ c03 : 
 - ex04 ft_strstr
 
 c04 : 
+- ex02 ft_putnbr
 - ex03 ft_atoi (exam 2/3)
 
 c05 : 

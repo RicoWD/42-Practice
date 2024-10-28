@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Exercices/c02/ex00/readme.md",
+                "file": "Exercices/c02/ex07/readme.md",
                 "mode": "source",
                 "source": false
               },
@@ -164,24 +164,30 @@
   },
   "active": "618bd808a9877d5f",
   "lastOpenFiles": [
-    "Exercices/c02/ex01/ft_strncpy.c~",
-    "Exercices/c02/ex01/a.out",
-    "Exercices/c02/ex01/ft_strncpy.c",
-    "Exercices/c02/ex01",
-    "Exercices/c01/ex02/readme.md",
+    "Exercices/c02/ex08",
+    "Supports/Exercices clés 42.md",
+    "Exercices/c02/ex07/readme.md",
+    "Exercices/c02/ex07/ft_strupcase.c~",
+    "Exercices/c02/ex07/a.out",
+    "Exercices/c02/ex07/ft_strupcase.c",
+    "Exercices/c02/ex07",
+    "Exercices/c02/ex06/ft_str_is_printable.c~",
+    "Exercices/c02/ex06/a.out",
+    "Exercices/c02/ex06/ft_str_is_printable.c",
+    "Exercices/c02/ex06/ft_str_is_printable",
+    "Exercices/c02/ex06",
+    "Exercices/c02/ex05/ft_str_is_uppercase.c~",
+    "Exercices/c02/ex02/readme.md",
+    "Sans titre.md",
+    "readme.md",
+    "Exercices/c04/ex02/readme.md",
+    "Supports/Clé SSH - Procédures.md",
     "Exercices/c02/ex00/readme.md",
-    "Exercices/c02/ex00/ft_strcpy.c~",
-    "Exercices/c02/ex00/a.out",
-    "Exercices/c02/ex00/ft_strcpy.c",
-    "Exercices/c01/ex08/ft_sort_int_tab.c~",
-    "Exercices/c02/ex00",
-    "Exercices/c02",
-    "Exercices/c01/ex04/ft_ultimate_div_mod.c~",
+    "Exercices/c01/ex02/readme.md",
     "Exercices/c01/readme.md",
     "Exercices/c00/readme.md",
     "Exercices/c01/ex07/readme.md",
     "Exercices/c01/ex06/readme.md",
-    "Exercices/sh00/ex00/readme.md",
-    "readme.md"
+    "Exercices/sh00/ex00/readme.md"
   ]
 }
