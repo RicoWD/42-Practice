@@ -1,4 +1,0 @@
-Host github.com
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/mbp_ep_git

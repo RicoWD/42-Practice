@@ -1,0 +1,4 @@
+int	compute(char *data)
+{
+	
+}
