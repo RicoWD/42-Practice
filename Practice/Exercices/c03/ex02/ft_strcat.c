@@ -6,7 +6,7 @@
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:20:27 by codephenix5       #+#    #+#             */
-/*   Updated: 2024/11/04 17:01:08 by codephenix5      ###   ########.fr       */
+/*   Updated: 2024/11/08 13:02:30 by codephenix5      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,17 @@ char	*ft_strcat(char *dest, char *src)
 	j = 0;
 	while (dest[i])
 	{
-		if (dest[i] == '\0')
-			i++;
+		i++;
 	}
-	return (dst);
+
+    while (src[j])
+    {
+    	dest[i] = src[j];
+    	i++;
+		j++;
+    }
+	dest[i] = '\0';
+	return (dest);
 }
 
 #include <stdio.h>
