@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 12:45:15 by codephenix5       #+#    #+#             */
-/*   Updated: 2024/11/14 14:43:40 by codephenix5      ###   ########.fr       */
+/*   Created: 2024/11/18 16:15:10 by codephenix5       #+#    #+#             */
+/*   Updated: 2024/11/18 16:22:12 by codephenix5      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_strlen(char *str)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
 
 	i = 0;
-	j = 0;
-	while (dest[i])
+
+	while (str[i])
 	{
 		i++;
 	}
-	while (src[j] && j < nb)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }
 
 #include <stdio.h>
 
 int	main(void)
 {
-	char	dst[50] = "Début de texte ";
-	char	src[] = "et voici la fin";
-	int	nb = 10;
-	
-	printf("Text complet %s\n", ft_strncat(dst, src, nb));
+	char	str[80] = "Salut, je ne sais pas encore en quoi consiste l'exo.";
+
+	printf("Nombre de caractères : %d\n", ft_strlen(str));
+	return (0);
 }
