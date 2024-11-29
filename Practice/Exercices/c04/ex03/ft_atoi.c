@@ -6,31 +6,31 @@
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:51:09 by codephenix5       #+#    #+#             */
-/*   Updated: 2024/11/28 23:46:53 by ep               ###   ########.fr       */
+/*   Updated: 2024/11/29 13:01:37 by codephenix5      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(char *str)
 {
 	int	i;
-	int	j;
 	int	sign_counter;
 	int	nbr;
 
 	i = 0;
-	j = 0;
 	sign_counter = 0;
 	nbr = 0;
-	if ((str[i]) && (str[i] == ' ') || (str[i] >= '0') || (str[i] <= '9'))
+	while ((str[i]) && ((str[i] == ' ') || (str[i] >= '0') || (str[i] <= '9')))
 	{
 		if (str[i] == '-')
 			sign_counter++;
 		if (sign_counter % 2 == 0)
+		{
 			nbr = '-';
-			j++;
+		}
 		if (str[i] >= '0' && str[i] <= '9')
-			nbr = str[i];
-			j++;
+		{
+			nbr = nbr * 10 + str[i];
+		}
 		i++;
 	}
 	return (nbr);
@@ -40,7 +40,15 @@ int	ft_atoi(char *str)
 
 int	main(void)
 {
-	char	str[20] = "   -+--+1234o1223";
+	char	str0[20] = "12343";
+	char	str1[20] = "1234o1223";
+	char	str2[20] = "-1234o1223";
+	char	str3[20] = "--+1234o1223";
+	char	str4[20] = "   -+--+1234o1223";
 
-	printf("Voilà, ce que je reçois %d\n", ft_atoi(str));
+	printf("Rendu 0 %d\n", ft_atoi(str0));
+	printf("Rendu 1 %d\n", ft_atoi(str1));
+	printf("Rendu 2 %d\n", ft_atoi(str2));
+	printf("Rendu 3 %d\n", ft_atoi(str3));
+	printf("Rendu 4 %d\n", ft_atoi(str4));
 }
