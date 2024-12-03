@@ -6,7 +6,7 @@
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:49:41 by codephenix5       #+#    #+#             */
-/*   Updated: 2024/12/02 16:53:46 by codephenix5      ###   ########.fr       */
+/*   Updated: 2024/12/03 12:16:24 by ep               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,21 @@ void    ft_putnbr_base(int nbr, char *base)
 		return;
 	if (is_base_ok(base))
 	{
-		
+		if (nbr < 0)
+		{
+			ft_putchar('-');
+			nbr = -nbr;
+		}
+		int	k;
+
+		k = 0;
+		while (base[k])
+		{
+			k++;
+		}
+		if (nbr >= 10)
+			ft_putnbr_base(nbr / 10, base);
+		ft_putchar(nbr % k);	
 	}
 }
 
