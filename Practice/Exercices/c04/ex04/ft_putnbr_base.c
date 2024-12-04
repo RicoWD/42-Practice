@@ -5,63 +5,106 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 11:51:30 by codephenix5       #+#    #+#             */
-/*   Updated: 2024/12/02 15:49:00 by codephenix5      ###   ########.fr       */
+/*   Created: 2024/12/02 15:49:41 by codephenix5       #+#    #+#             */
+/*   Updated: 2024/12/04 13:01:33 by codephenix5      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char nbr_c)
+void    ft_putchar(char nbr_c)
 {
-	write (1, &nbr_c, 1);
+    write (1, &nbr_c, 1);
 }
 
-void    ft_putnbr(int nb)
-{   
-    if (nb == -2147483648)
-    {
-        ft_putchar('-');
-        ft_putchar('2');
-        nb = 147483648;
-    }
-    if (nb < 0)
-    {
-        ft_putchar('-');
-        nb = -nb;
-    }
-    if (nb == 0)
-    {
-        ft_putchar('0');
-        return;
-    }
-    if (nb >= 10)
-        ft_putnbr(nb / 10);
-    ft_putchar(nb % 10 + '0');
-}
-
-void	ft_putnbr_base(int nbr, char *base)
+int	is_base_ok(char *base)
 {
-	int	i;
+	int	i, j;
+	int base_len;
+
+	base_len = 0;
+
+	while (base[base_len])
+		base_len++;
+
+	if (base_len < 2)
+		return (0);
 
 	i = 0;
-	
-	while (ft_putnbr(nbr))
+	while (i < base_len)
 	{
-		base[i] = ft_putnbr(nbr)[i];
+		if (base[i] == '-' || base[i] == '+' || base[i] <= 31 || base[i] >= 127)
+			return (0);
+		j = i + 1;
+		while (j < base_len)
+		{
+			if (base[i] == base[j])
+				return (0);
+			j++;
+		}
+		i++;
 	}
+	return (1);
 }
 
-#include <stdio.h>
+void    ft_putnbr(int nbr, char *base, int k)
+{
+	if (nbr == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		nbr = 147483648;
+	}
+	if (nbr < 0)
+	{
+		ft_putchar('-');
+		nbr = -nbr;
+	}
+	if (nbr >= k)
+		ft_putnbr(nbr / k, base, k);
+	ft_putchar(base[nbr % k]);
+	return;
+}
+
+void    ft_putnbr_base(int nbr, char *base)
+{
+	if (!is_base_ok(base))
+		return;
+	
+	int k;
+
+	k = 0;
+	while (base[k])
+		k++;
+	if (nbr == 0)
+	{
+		ft_putchar(base[0]);
+		return;
+	}
+	ft_putnbr(nbr, base, k);
+}
 
 int	main(void)
 {
-	int	nbr;
-	char	base[100] = "";
-
-	nbr = 1991;
-
-	ft_putnbr_base(nbr, base);
-//	printf("Résultat %s\n", ft_putnbr_base(nbr, base));
+	ft_putnbr_base(42, "0123456789");
+	ft_putchar('\n');
+	ft_putnbr_base(-42, "01");
+	ft_putchar('\n');
+	ft_putnbr_base(42, "0123456789ABCDEF");
+	ft_putchar('\n');
+	ft_putnbr_base(42, "poneyvif");
+	ft_putchar('\n');
+	ft_putnbr_base(42, "");
+	ft_putchar('\n');
+	ft_putnbr_base(42, "0");
+	ft_putchar('\n');
+	ft_putnbr_base(42, "00123");
+	ft_putchar('\n');
+	ft_putnbr_base(42, "012+345");
+	ft_putchar('\n');
+	ft_putnbr_base(-2147483648, "0123456789");
+	ft_putchar('\n');
+	ft_putnbr_base(2147483648, "0123456789");
+	ft_putchar('\n');
 	return (0);
 }
