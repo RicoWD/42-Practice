@@ -6,7 +6,7 @@
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 12:24:49 by codephenix5       #+#    #+#             */
-/*   Updated: 2024/12/02 15:15:20 by codephenix5      ###   ########.fr       */
+/*   Updated: 2024/12/05 10:49:58 by codephenix5      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,6 @@ int	main(void)
 	nb = 42;
 	ft_putnbr(nb);
 	ft_putchar('\n');
+
+	return 0;
 }

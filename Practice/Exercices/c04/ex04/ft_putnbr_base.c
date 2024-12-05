@@ -6,30 +6,28 @@
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:49:41 by codephenix5       #+#    #+#             */
-/*   Updated: 2024/12/04 13:01:33 by codephenix5      ###   ########.fr       */
+/*   Updated: 2024/12/05 09:46:58 by codephenix5      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar(char nbr_c)
+void	ft_putchar(char nbr_c)
 {
-    write (1, &nbr_c, 1);
+	write (1, &nbr_c, 1);
 }
 
 int	is_base_ok(char *base)
 {
-	int	i, j;
-	int base_len;
+	int	i;
+	int	j;
+	int	base_len;
 
 	base_len = 0;
-
 	while (base[base_len])
 		base_len++;
-
 	if (base_len < 2)
 		return (0);
-
 	i = 0;
 	while (i < base_len)
 	{
@@ -47,7 +45,7 @@ int	is_base_ok(char *base)
 	return (1);
 }
 
-void    ft_putnbr(int nbr, char *base, int k)
+void	ft_putnbr(int nbr, char *base, int k)
 {
 	if (nbr == -2147483648)
 	{
@@ -63,23 +61,22 @@ void    ft_putnbr(int nbr, char *base, int k)
 	if (nbr >= k)
 		ft_putnbr(nbr / k, base, k);
 	ft_putchar(base[nbr % k]);
-	return;
+	return ;
 }
 
-void    ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(int nbr, char *base)
 {
-	if (!is_base_ok(base))
-		return;
-	
-	int k;
+	int	k;
 
+	if (!is_base_ok(base))
+		return ;
 	k = 0;
 	while (base[k])
 		k++;
 	if (nbr == 0)
 	{
 		ft_putchar(base[0]);
-		return;
+		return ;
 	}
 	ft_putnbr(nbr, base, k);
 }
