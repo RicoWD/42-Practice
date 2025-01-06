@@ -6,7 +6,7 @@
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 10:24:39 by codephenix5       #+#    #+#             */
-/*   Updated: 2024/12/06 11:13:25 by codephenix5      ###   ########.fr       */
+/*   Updated: 2025/01/06 16:16:34 by ep               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,6 @@ int	ft_atoi_base(char *str, char *base)
         result = -result;
 	return (result);
 }
-
-#include <stdio.h>
 
 #include <stdio.h>
 
