@@ -6,7 +6,7 @@
 /*   By: ep <marvin@42.fr>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:00:44 by ep                #+#    #+#             */
-/*   Updated: 2025/01/07 13:02:23 by codephenix5      ###   ########.fr       */
+/*   Updated: 2025/01/08 12:13:02 by codephenix5      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,34 +99,36 @@ char	*int_to_str(int	nbr_int, char *base)
 	int		base_len;
 	int		malloc_need;
 	int		count_nbr_int;
-	int		empty_char;
+	int		i;
+	int		tmp;
 
 	base_len = 0;
 	malloc_need = 0;
 	count_nbr_int = nbr_int;
-	empty_char = 0;
-	// VÉRIFICATION
 	if (nbr_int == 0)
 	{
-		char	*zero_str = (char *)malloc(2); 
-		if (!zero_str)
+		nbr_char = (char *)malloc(2);
+		if (!nbr_char)
 			return (NULL);
-		zero_str[0] = '0';
-		zero_str[1] = '\0';
-		return (zero_str);
-	}
+	nbr_char[0] = '0';
+	nbr_char[1] = '\0';
+	return (nbr_char);
+}
 
 	// DÉCOMPTES
 	while (base[base_len])
 		base_len++;
 	if (nbr_int < 0)
-		malloc_need++;
+		malloc_need++; //Pour '-'
 	while (count_nbr_int != 0)
 	{
 		count_nbr_int = count_nbr_int / base_len;
-		malloc_need++;
+		malloc_need++; //Pour chaque chiffre
 	}
-	nbr_char = (char *)malloc(malloc_need + 1);
+	malloc_need++; //Pour '\0'
+	nbr_char = malloc((sizeof(*nbr_char) * malloc_need));
+	if (!nbr_char)
+		return (NULL);
 
 	// TRANSFORMATIONS
 	if (nbr_int < 0)
@@ -134,14 +136,15 @@ char	*int_to_str(int	nbr_int, char *base)
 		nbr_char[0] = '-';
 		nbr_int = -nbr_int;
 	}
+	i = malloc_need - 2;
 	while (nbr_int != 0)
 	{
-		nbr_int = nbr_int % base_len;
-		nbr_char[malloc_need] = base[nbr_int];
-		malloc_need--;
-		empty_char++;
+		tmp = nbr_int % base_len;
+		nbr_char[i] = base[tmp];
+		nbr_int = nbr_int / base_len;
+		i--;
 	}
-	nbr_char[empty_char] = '\0'; 
+	nbr_char[malloc_need - 1] = '\0'; 
 	return (nbr_char);
 }
 
@@ -154,6 +157,8 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 		return NULL;
 	nbr_from = ft_atoi_base(nbr, base_from);
 	nbr_to = int_to_str(nbr_from, base_to);
+	if (!nbr_to)
+		return (NULL);
 	return (nbr_to);
 }
 
@@ -170,5 +175,7 @@ int	main(void)
 	base_from = "0123456789";
 	base_to = "01";
 
-	printf("Résultat : %s\n", ft_convert_base(nbr, base_from, base_to));
+	printf("Résultat 1 : %s\n", ft_convert_base(nbr, base_from, base_to));
+    printf("Résultat 2 : %s\n", ft_convert_base("12F2","0123456789ABCDEF", "0123456789"));
+
 }
