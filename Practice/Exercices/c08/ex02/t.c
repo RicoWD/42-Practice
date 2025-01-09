@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   t.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 12:41:58 by codephenix5       #+#    #+#             */
-/*   Updated: 2025/01/09 12:00:00 by codephenix5      ###   ########.fr       */
+/*   Created: 2025/01/09 12:09:22 by codephenix5       #+#    #+#             */
+/*   Updated: 2025/01/09 14:44:14 by codephenix5      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#include "ft_abs.h"
+#include <stdio.h>
 
-typedef int	t_bool;
+int main(void)
+{
+    int value1 = -42;
+    int value2 = 10;
 
-# define TRUE 1
-# define FALSE (!TRUE)
-# define SUCCESS 0
-# define EVEN(n) ((n) % 2 == 0)
-# define EVEN_MSG "I have an even number of arguments. \n"
-# define ODD_MSG "I have an odd number of arguments. \n"
-
-#endif
+    printf("Valeur absolue de %d : %d\n", value1, ABS(value1));
+    printf("Valeur absolue de %d : %d\n", value2, ABS(value2));
+    return (0);
+}

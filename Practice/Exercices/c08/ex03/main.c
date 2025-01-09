@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 12:41:58 by codephenix5       #+#    #+#             */
-/*   Updated: 2025/01/09 12:00:00 by codephenix5      ###   ########.fr       */
+/*   Created: 2025/01/09 15:09:13 by codephenix5       #+#    #+#             */
+/*   Updated: 2025/01/09 15:40:44 by codephenix5      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#include <stdio.h>
+#include "ft_point.h"
 
-typedef int	t_bool;
+void	set_point(t_point *point)
+{
+	point->x = 42;
+	point->y = 21;
+}
 
-# define TRUE 1
-# define FALSE (!TRUE)
-# define SUCCESS 0
-# define EVEN(n) ((n) % 2 == 0)
-# define EVEN_MSG "I have an even number of arguments. \n"
-# define ODD_MSG "I have an odd number of arguments. \n"
+int	main(void)
+{
+	t_point	point;
 
-#endif
+	set_point(&point);
+	printf("%d, %d\n", point.x, point.y);
+	return (0);
+}

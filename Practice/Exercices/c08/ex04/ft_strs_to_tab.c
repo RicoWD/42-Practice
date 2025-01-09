@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codephenix5 <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 12:41:58 by codephenix5       #+#    #+#             */
-/*   Updated: 2025/01/09 12:00:00 by codephenix5      ###   ########.fr       */
+/*   Created: 2025/01/09 16:24:03 by codephenix5       #+#    #+#             */
+/*   Updated: 2025/01/09 16:46:34 by codephenix5      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#include "ft_stock_str.h"
 
-typedef int	t_bool;
-
-# define TRUE 1
-# define FALSE (!TRUE)
-# define SUCCESS 0
-# define EVEN(n) ((n) % 2 == 0)
-# define EVEN_MSG "I have an even number of arguments. \n"
-# define ODD_MSG "I have an odd number of arguments. \n"
-
-#endif
+struct s_stock_str *ft_strs_to_tab(int ac, char **av)
+{
+	
+}
